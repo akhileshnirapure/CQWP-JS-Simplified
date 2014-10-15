@@ -5,12 +5,18 @@ Working with Content Query Webpart, you should be good at XSLT, Showing only rol
 
 
 Warining : The approach works only with static data and not realtime, so no scenario with paging.
+========
 
 Content Query WebPart is excellent at rollingup data from all site and good at caching the data too. But the problem is you have to deal with another language XSLT if you want to work properly with OOB template customiztions.
 
-Idea : Let Content Query WebPart generate the XML (Result) and let the client side script webpart take over to render content using any javascript framework you want.
+Idea : 
+====
+
+Let Content Query WebPart generate the XML (Result) and let the client side script webpart take over to render content 
+using any javascript framework you want.
 
 Solution Main Component
+=======================
 
 ContentQueryRaw.xsl : The xsl which is a copy of main.xsl dumps the CQWP result in a div within a Comment.
 
@@ -23,7 +29,7 @@ is pointing to the xsl which dumps the result.
 xml2js.js : Thanks to Abdulla Abdurakhmanov Developer of https://code.google.com/p/x2js/ (x2js) which converts the XML string to Json Object/array.
 
 Some javascript functions to make the result appropriate
-
+```
 var parserService = (function (p_jquery) {
     var self = this,
         targetElement;
@@ -66,7 +72,7 @@ var parserService = (function (p_jquery) {
         Data : self.parse
     }
 })($);
-
+```
 
 Now you can use this service with any framework you want, i've chosen to use with KO.
 
