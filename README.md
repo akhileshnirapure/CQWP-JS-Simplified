@@ -18,15 +18,25 @@ using any javascript framework you want.
 Solution Main Component
 =======================
 
-ContentQueryRaw.xsl : The xsl which is a copy of main.xsl dumps the CQWP result in a div within a Comment.
+ContentQueryRaw.xsl : 
+-------------------
+The xsl which is a copy of main.xsl dumps the CQWP result in a div within a Comment.
 
-Raw Result CQWP.webpart : The Content Query Webpart which can be configured as we want, its just we need to ensure the 
+Raw Result CQWP.webpart : 
+-----------------------
+The Content Query Webpart which can be configured as we want, its just we need to ensure the 
 
 <property name="MainXslLink" type="string">/Style Library/XSL Style Sheets/ContentQueryRaw.xsl</property>
 
 is pointing to the xsl which dumps the result.
 
-xml2js.js : Thanks to Abdulla Abdurakhmanov Developer of https://code.google.com/p/x2js/ (x2js) which converts the XML string to Json Object/array.
+xml2js.js
+---------
+
+Thanks to Abdulla Abdurakhmanov Developer of https://code.google.com/p/x2js/ (x2js) which converts the XML string to Json Object/array.
+
+Code
+----
 
 Some javascript functions to make the result appropriate
 ```
